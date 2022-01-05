@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListuserComponent } from './listuser/listuser.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdduserComponent,
+    ListuserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

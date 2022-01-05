@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<form #userInfo="ngForm" id="userform" (ngSubmit)="addUser(userInfo.value)">
+
+  <input type="text" name = "nom" id="nameinput" placeholder="Nom" autocomplete="off" autofocus ngModel/>
+  <input type="password" name = "password" id="passwordinput" placeholder="Mot de passe" autocomplete="off" autofocus ngModel/>
+  <input type="password" name = "passwordConf" id="passwordconfinput" placeholder="Confirmer mot de passe" autocomplete="off" autofocus ngModel/>
+  <button onclick="document.getElementById('nameinput').value = ''; document.getElementById('passwordinput').value = ''; document.getElementById('passwordconfinput').value = ''">Register</button>
+
+</form>
+
+<h2>{{information}}</h2>
