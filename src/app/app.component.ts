@@ -26,7 +26,7 @@ export class AppComponent {
     });
    }
 
-   public changeRight() {
+  public changeRight() {
     this.getRight.changeRight(this.listRight!).subscribe();
   }
 

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from './app.component';
 import { Observable } from 'rxjs';
-import { catchError, debounceTime, filter, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdduserserviceService {
+
+  test?: boolean;
 
   constructor(private http : HttpClient) { }
 
@@ -24,7 +25,7 @@ export class AdduserserviceService {
   }
 
   public changeRight(right : boolean): Observable<boolean> {
-    return this.http.post<boolean>("http://localhost:10000/hasRight", !right);
+    return this.http.post<boolean>("http://localhost:10000/hasRight", right);
   }
 
 }
