@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListuserComponent } from './listuser/listuser.component';
+import { AdduserreacComponent } from './adduserreac/adduserreac.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdduserComponent,
-    ListuserComponent
+    ListuserComponent,
+    AdduserreacComponent
   ],
   imports: [
     BrowserModule,
