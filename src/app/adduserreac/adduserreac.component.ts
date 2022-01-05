@@ -66,7 +66,7 @@ export class AdduserreacComponent implements OnInit {
       next: () =>  this.information = "User " + nomString + " registered."
     });
 
-    this.onReset;
+    this.onReset();
   }
 
   onReset(): void {
