@@ -19,4 +19,12 @@ export class AdduserserviceService {
     return this.http.get<User[]>("http://localhost:10000/list");
   }
 
+  public getRight(): Observable<boolean>{
+    return this.http.get<boolean>("http://localhost:10000/hasRight");
+  }
+
+  public changeRight(right : boolean): Observable<boolean> {
+    return this.http.post<boolean>("http://localhost:10000/hasRight", !right);
+  }
+
 }
