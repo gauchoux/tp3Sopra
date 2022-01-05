@@ -13,7 +13,7 @@ export interface User {
 
 export class AppComponent {
   title = 'tp3';
-
+  addchecked = true;
   choose = true;
 
   public addU(){
@@ -22,6 +22,10 @@ export class AppComponent {
 
   public userL(){
     this.choose = false;
+  }
+
+  public onCheckedAdd(){
+    this.addchecked = !this.addchecked;
   }
 }
 
