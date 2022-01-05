@@ -13,6 +13,16 @@ export interface User {
 
 export class AppComponent {
   title = 'tp3';
+
+  choose = true;
+
+  public addU(){
+    this.choose = true;
+  }
+
+  public userL(){
+    this.choose = false;
+  }
 }
 
 
