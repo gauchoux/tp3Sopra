@@ -1,4 +1,7 @@
-<div class="container">
-  <app-adduser></app-adduser>
-  <app-listuser></app-listuser>
+<div class="container" style="text-align:center">
+  <button (click)="addU()">Add a User</button> <button (click)="userL()">User List</button>
+  <br><br>
+  <app-adduser *ngIf="choose==true"></app-adduser>
+  <br><br>
+  <app-listuser *ngIf="choose==false"></app-listuser>
 </div>
