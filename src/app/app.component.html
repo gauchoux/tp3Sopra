@@ -1,13 +1,3 @@
-<div class="container" style="text-align:center">
-  <input id="Add" type="checkbox" (click)="onCheckedAdd()" checked=true><label for="Add">Add User Rights</label><br>
-  <input id="See" type="checkbox" (click)="changeRight()" [(ngModel)]="listRight"><label for="See">See the User List Right</label><br>
-  <button (click)="addU()">Add a User</button> <button (click)="userL()">User List</button>
-  <br><br>
-  <app-adduserreac *ngIf="choose==true && addchecked==true"></app-adduserreac>
-  <label *ngIf="choose==true && addchecked==false">You cannot add a user</label>
-  <br><br>
-  <app-listuser *ngIf="choose==false"></app-listuser>
-
-</div>
+<router-outlet></router-outlet>
 
 

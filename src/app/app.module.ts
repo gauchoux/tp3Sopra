@@ -9,13 +9,15 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListuserComponent } from './listuser/listuser.component';
 import { AdduserreacComponent } from './adduserreac/adduserreac.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdduserComponent,
     ListuserComponent,
-    AdduserreacComponent
+    AdduserreacComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

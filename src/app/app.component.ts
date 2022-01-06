@@ -14,35 +14,9 @@ export interface User {
 
 export class AppComponent {
   title = 'tp3';
-  addchecked = true;
-  choose = true;
 
-  listRight?: boolean;
-
-  constructor(public getRight : AdduserserviceService) {
-    this.getRight.getRight()
-    .subscribe({
-      next : right => this.listRight = right
-    });
+  constructor() {
    }
-
-  public changeRight() {
-    this.getRight.changeRight(!this.listRight!).subscribe({
-      next : x => this.listRight = x
-    });
-  }
-
-  public addU(){
-    this.choose = true;
-  }
-
-  public userL(){
-    this.choose = false;
-  }
-
-  public onCheckedAdd(){
-    this.addchecked = !this.addchecked;
-  }
 }
 
 
