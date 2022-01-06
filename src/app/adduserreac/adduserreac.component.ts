@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdduserserviceService } from '../adduserservice.service';
-import { User } from '../app.component';
+import { AppComponent, User } from '../app.component';
 import Validation from '../validator';
 
 @Component({
@@ -17,7 +17,7 @@ export class AdduserreacComponent implements OnInit {
   title = 'Connexion';
   information = "";
 
-  constructor(private formBuilder: FormBuilder, public addUserS : AdduserserviceService) {}
+  constructor(private formBuilder: FormBuilder, public addUserS : AdduserserviceService, public appCc : AppComponent) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(

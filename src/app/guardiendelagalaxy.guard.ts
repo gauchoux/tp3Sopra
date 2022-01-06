@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AdduserserviceService } from './adduserservice.service';
 import { AppComponent } from './app.component';
 
 @Injectable({
@@ -8,12 +9,22 @@ import { AppComponent } from './app.component';
 })
 export class GuardiendelagalaxyGuard implements CanActivate {
 
-  constructor(private appCc: AppComponent) {}
+  listRight?: boolean;
+
+  constructor(public getAddRight : AdduserserviceService) {}
 
   canActivate(
-    route: ActivatedRouteSnapshot,
+    next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    return this.appCc.addchecked;
+    this.getAddRight.getRight()
+    .subscribe({
+      next : right => this.listRight = right
+    })
+    if (this.listRight) {
+      return true;
+    }
+    window.alert('You don\'t have permission to view this page');
+    return false;
   }
 
 }

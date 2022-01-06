@@ -61,7 +61,10 @@
         Reset
       </button>
     </div>
-  </form>
-</div>
 
-<h1>{{information}}</h1>
+    <label>{{information}}</label>
+  </form>
+
+  <label *ngIf="appCc.addchecked==false">You cannot add a user</label>
+
+</div>
