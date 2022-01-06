@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './app.component';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,11 @@ export class AdduserserviceService {
   }
 
   public getRight(): Observable<boolean>{
-    return this.http.get<boolean>("http://localhost:10000/hasRight");
+    return this.http.get<{right: boolean}>("http://localhost:10000/hasRight").pipe(map(x => x.right));
   }
 
   public changeRight(right : boolean): Observable<boolean> {
-    return this.http.post<boolean>("http://localhost:10000/hasRight", right);
+    return this.http.post<{right: boolean}>("http://localhost:10000/hasRight", {right}).pipe(map(x => x.right));
   }
 
 }

@@ -27,7 +27,9 @@ export class AppComponent {
    }
 
   public changeRight() {
-    this.getRight.changeRight(this.listRight!).subscribe();
+    this.getRight.changeRight(!this.listRight!).subscribe({
+      next : x => this.listRight = x
+    });
   }
 
   public addU(){

@@ -50,6 +50,8 @@ export class AdduserreacComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
 
+    this.form.markAllAsTouched();
+
     if (this.form.invalid) {
       return;
     }
