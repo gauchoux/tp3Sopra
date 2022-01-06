@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { AdduserserviceService } from './adduserservice.service';
-import { AppComponent } from './app.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GuardiendelagalaxyGuard implements CanActivate {
 
-  listRight?: boolean;
-
-  constructor(public getAddRight : AdduserserviceService) {}
+  constructor(public userService : AdduserserviceService) {
+  }
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
-    this.getAddRight.getRight()
-    .subscribe({
-      next : right => this.listRight = right
-    })
-    if (this.listRight) {
-      return true;
+    state: RouterStateSnapshot): Observable<boolean> {
+    return this.userService.getRight().pipe(tap( x => {
+      if(!x) {
+        window.alert("No pasta");
+      }
+    } ))
     }
-    window.alert('You don\'t have permission to view this page');
-    return false;
-  }
 
 }

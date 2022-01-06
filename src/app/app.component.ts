@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AdduserserviceService } from './adduserservice.service';
-import { HomeComponent } from './home/home.component';
 
 export interface User {
   nom : string;
@@ -15,8 +14,6 @@ export interface User {
 
 export class AppComponent {
   title = 'tp3';
-
-  addchecked = true;
 
   listRight?: boolean;
 
@@ -34,7 +31,7 @@ export class AppComponent {
   }
 
   public onCheckedAdd(){
-    this.addchecked = !this.addchecked;
+    this.getRight.addchecked = !this.getRight.addchecked;
   }
 
 }
