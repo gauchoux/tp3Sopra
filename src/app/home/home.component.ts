@@ -11,6 +11,4 @@ export class HomeComponent {
 
   constructor(public appCc : AppComponent) {
    }
-
-  addcheckedHome = this.appCc.addchecked;
 }
