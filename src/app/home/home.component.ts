@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdduserserviceService } from '../adduserservice.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -8,34 +9,8 @@ import { AdduserserviceService } from '../adduserservice.service';
 })
 export class HomeComponent {
 
-  addchecked = true;
-  choose = true;
-
-  listRight?: boolean;
-
-  constructor(public getRight : AdduserserviceService) {
-    this.getRight.getRight()
-    .subscribe({
-      next : right => this.listRight = right
-    });
+  constructor(public appCc : AppComponent) {
    }
 
-  public changeRight() {
-    this.getRight.changeRight(!this.listRight!).subscribe({
-      next : x => this.listRight = x
-    });
-  }
-
-  public addU(){
-    this.choose = true;
-  }
-
-  public userL(){
-    this.choose = false;
-  }
-
-  public onCheckedAdd(){
-    this.addchecked = !this.addchecked;
-  }
-
+  addcheckedHome = this.appCc.addchecked;
 }
